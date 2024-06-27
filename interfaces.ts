@@ -8,6 +8,14 @@ export interface JsonData {
   telegram_link: string;
 }
 
-export interface LayoutProps {
-  children: ReactNode;
+export interface ButtonWithArrowProps {
+  children: React.ReactNode;
+  onClick?: () => void;
+  className?: string;
+}
+
+export interface ScaleLinkProps {
+  children: React.ReactNode;
+  href: string;
+  className?: string;
 }

@@ -9,10 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        customBlack: '#010001',
-        customWhite: '#FFFEFE',
-        customYellow: '#F2D732',
-      }
+        customDarkGreen: "#2D3F32",
+        customLightGreen1: "#EFF1EC",
+        customLightGreen2: "#DCE0D8",
+        customLightGreen3: "#A9B2A0",
+        customBlack: "#383839",
+        customBrown: "#884535",
+      },
     },
   },
   plugins: [],

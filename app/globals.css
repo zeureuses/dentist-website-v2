@@ -1,11 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Custom CSS */
-.video-mobile {
-  @media (max-width: 640px) {
-    /* Adjust breakpoint as needed */
-    transform: translateX(-10%);
-  }
-}

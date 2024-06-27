@@ -47,18 +47,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-800">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <nav className="absolute z-20 h-12 w-full">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/">
-              <span className="text-xl font-bold text-white">Logo</span>
+              <span className="text-xl font-bold text-customBlack">Logo</span>
             </Link>
           </div>
-          <div className="fixed right-4 top-4 z-50">
+          <div className="z-50">
             <button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              className="inline-flex items-center justify-center rounded-md text-customBlack hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (

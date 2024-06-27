@@ -1,40 +1,28 @@
-import { headingsFont } from "./layout";
-import { cn } from "@/utils/cn";
+import bgGradient from "@/public/Gradient.png";
 import Image from "next/image";
+import MainHero from "@/components/MainHero";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen">
-      <div className="absolute inset-0">
-        <video
-          src="/video.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          className=""
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover", // Ensures the video covers the area without stretching
-          }}
-        />
+    <main>
+      <div className="relative flex h-[85vh]">
+        <div className="absolute inset-0">
+          <Image
+            src={bgGradient}
+            alt="bgGradient"
+            quality={100}
+            fill
+            className="object-cover"
+          />
+        </div>
+        <MainHero />
       </div>
-      {/* Add your content here */}
-      <div className="relative z-10 p-8">
-        <h1
-          className={cn(
-            "text-4xl font-bold text-white",
-            headingsFont.className,
-          )}
-        >
-          Welcome to My Landing Page
-        </h1>
-        {/* Add more content */}
-      </div>
-    </div>
+      {/* <section className="mt-20 h-20 bg-red-500">aaa</section> */}
+      {/* <section className="mt-20 h-20 bg-blue-500">aaa</section> */}
+    </main>
   );
+}
+
+{
+  /* <div className={cn(concert.className, "text-3xl flex gap-12 lg:text-4xl lg:gap-16")}></div> */
 }

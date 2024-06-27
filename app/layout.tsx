@@ -2,14 +2,27 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import NavBar from "@/components/Navbar";
+import { cn } from "@/utils/cn";
+import Image from "next/image";
+import bgGradient from "@/public/Gradient.png";
 
-const mainFont = localFont({
-  src: "../public/fonts/main.woff2",
+export const FancyFont = localFont({
+  src: "../public/fonts/font2.ttf",
   display: "swap",
 });
 
-export const headingsFont = localFont({
-  src: "../public/fonts/headings.woff2",
+export const MainFont = localFont({
+  src: "../public/fonts/font3.woff",
+  display: "swap",
+});
+
+export const MainFontBold = localFont({
+  src: "../public/fonts/font4.woff",
+  display: "swap",
+});
+
+export const SerifFont = localFont({
+  src: "../public/fonts/font5.woff2",
   display: "swap",
 });
 
@@ -25,10 +38,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={cn(MainFont.className, "text-customBlack")}>
         <NavBar />
         {children}
       </body>
     </html>
   );
+}
+
+{
+  /* <div className={cn(concert.className, "text-3xl flex gap-12 lg:text-4xl lg:gap-16")}></div> */
 }

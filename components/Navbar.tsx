@@ -5,6 +5,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Logo from "./Logo";
 
 const navItems = [
   { path: "/", name: "Home" },
@@ -46,55 +47,66 @@ const Navbar = () => {
     visible: { opacity: 1, y: 0 },
   };
 
+  const buttonVariants = {
+    rest: { scale: 1 },
+    hover: { scale: 1.1 },
+    tap: { scale: 0.95 },
+  };
+
+  // @ts-ignore
+  const Path = (props) => (
+    <motion.path
+      fill="transparent"
+      strokeWidth="3"
+      stroke="currentColor"
+      strokeLinecap="round"
+      {...props}
+    />
+  );
+
   return (
     <nav className="absolute z-20 h-12 w-full">
-      <div className="mx-auto max-w-7xl">
-        <div className="flex items-center justify-between">
+      <div className="mx-auto h-full max-w-7xl">
+        <div className="flex h-full items-center justify-between px-8">
           <div className="flex items-center">
-            <Link href="/">
-              <span className="text-xl font-bold text-customBlack">Logo</span>
-            </Link>
+            <Logo />
           </div>
           <div className="z-50">
-            <button
+            <motion.button
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center rounded-md text-customBlack hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              className="mt-3 inline-flex items-center justify-center rounded-md text-customDarkGreen"
+              variants={buttonVariants}
+              initial="rest"
+              whileHover="hover"
+              whileTap="tap"
             >
               <span className="sr-only">Open main menu</span>
-              {isOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
+              <svg className="block h-7 w-7" viewBox="0 0 24 24">
+                <Path
+                  variants={{
+                    closed: { d: "M 2 2.5 L 20 2.5" },
+                    open: { d: "M 3 16.5 L 17 2.5" },
+                  }}
+                  animate={isOpen ? "open" : "closed"}
+                />
+                <Path
+                  d="M 2 9.423 L 20 9.423"
+                  variants={{
+                    closed: { opacity: 1 },
+                    open: { opacity: 0 },
+                  }}
+                  transition={{ duration: 0.1 }}
+                  animate={isOpen ? "open" : "closed"}
+                />
+                <Path
+                  variants={{
+                    closed: { d: "M 2 16.346 L 20 16.346" },
+                    open: { d: "M 3 2.5 L 17 16.346" },
+                  }}
+                  animate={isOpen ? "open" : "closed"}
+                />
+              </svg>
+            </motion.button>
           </div>
         </div>
       </div>

@@ -1,30 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import localFont from "next/font/local";
 import NavBar from "@/components/Navbar";
 import { cn } from "@/utils/cn";
-import Image from "next/image";
-import bgGradient from "@/public/Gradient.png";
-
-export const FancyFont = localFont({
-  src: "../public/fonts/font2.ttf",
-  display: "swap",
-});
-
-export const MainFont = localFont({
-  src: "../public/fonts/font3.woff",
-  display: "swap",
-});
-
-export const MainFontBold = localFont({
-  src: "../public/fonts/font4.woff",
-  display: "swap",
-});
-
-export const SerifFont = localFont({
-  src: "../public/fonts/font5.woff2",
-  display: "swap",
-});
+import { MainFont } from "@/fonts";
 
 export const metadata: Metadata = {
   title: "Create Next App",

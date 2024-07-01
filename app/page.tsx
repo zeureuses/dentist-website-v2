@@ -5,7 +5,7 @@ import MainHero from "@/components/MainHero";
 export default function Home() {
   return (
     <main>
-      <div className="relative flex h-[85vh]">
+      <div className="relative flex max-h-screen">
         <div className="absolute inset-0">
           <Image
             src={bgGradient}
@@ -17,7 +17,7 @@ export default function Home() {
         </div>
         <MainHero />
       </div>
-      {/* <section className="mt-20 h-20 bg-red-500">aaa</section> */}
+      <section className="h-20 bg-red-500">aaa</section>
       {/* <section className="mt-20 h-20 bg-blue-500">aaa</section> */}
     </main>
   );

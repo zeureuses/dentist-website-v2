@@ -15,12 +15,12 @@ const ScaleLink: React.FC<ScaleLinkProps> = ({ children, href, className }) => {
   }, [controls]);
 
   const linkVariants = {
-    hidden: { opacity: 0, x: 50 },
+    hidden: { opacity: 0, x: 100 },
     visible: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.5,
+        duration: 2, // Adjust this value to change the animation speed
         ease: "easeOut"
       }
     },
@@ -34,7 +34,7 @@ const ScaleLink: React.FC<ScaleLinkProps> = ({ children, href, className }) => {
       initial="hidden"
       animate={controls}
       whileHover="hover"
-      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }} // This now applies to hover and tap animations
     >
       <Link href={href}>
         {children}
@@ -44,6 +44,7 @@ const ScaleLink: React.FC<ScaleLinkProps> = ({ children, href, className }) => {
 };
 
 export default ScaleLink;
+
 
 
 

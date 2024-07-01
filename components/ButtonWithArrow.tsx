@@ -28,21 +28,20 @@ const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.5,
+        duration: 1.5,
         ease: "easeOut",
       },
     },
     hover: {
       scale: 1.05,
       boxShadow: "0px 5px 10px rgba(0,0,0,0.2)",
-      background: "linear-gradient(45deg, #383839, #A9B2A0)",
     },
     tap: { scale: 0.95 },
   };
 
   const textVariants = {
     hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { delay: 0.2 } },
+    visible: { opacity: 1, transition: { delay: 1 } },
     hover: {
       textShadow: "0px 0px 8px rgba(255,255,255,0.5)",
     },
@@ -79,8 +78,8 @@ const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({
       transition={{
         type: "spring",
         stiffness: 400,
-        damping: 10,
-        background: { duration: 0.3 },
+        damping: 30,
+        background: { duration: 0.5 },
       }}
     >
       <motion.span
@@ -99,8 +98,6 @@ const ButtonWithArrow: React.FC<ButtonWithArrowProps> = ({
           visible: { opacity: 0 },
           hover: {
             opacity: 1,
-            background:
-              "radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%)",
           },
         }}
       />
